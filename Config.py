@@ -34,12 +34,12 @@ for chan in channels:
     else:
         chans = chans + ", " + chan
         
-ops = ""        
+ops = ""
 for op in operators:
     if op == operators[0]:
         ops = op
     else:
-        ops = ops + ", " + op        
+        ops = ops + ", " + op
 config["PROPERTIES"]["Operators"] = ops
 with open("config.ini", "w") as file:   
     config.write(file)

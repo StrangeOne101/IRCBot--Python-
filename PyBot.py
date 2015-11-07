@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import socket
 import os
 from Config import *
