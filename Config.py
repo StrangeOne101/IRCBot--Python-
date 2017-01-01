@@ -3,6 +3,8 @@ from configparser import ConfigParser
 if __name__ == "__main__":
     raise Exception("Wrong module run! Run PyBot.py instead!")
 
+nickname = ""
+
 config = ConfigParser()
 config.read("config.ini")
 if "PROPERTIES" not in config.sections():
@@ -17,7 +19,11 @@ passwd = config["PROPERTIES"].get("Server Password", "")     #Optional
 root = "Strange"
 hiddenmsg = config["PROPERTIES"].get("MOTD", "IRCBot made in Python by Strange.")
 channels = config["PROPERTIES"].get("Channels", "#StrangeOne101").replace(" ", "").split(",")
-operators = config["PROPERTIES"].get("Operators", "Strange").replace(" ", "").split(",")
+list1 = config["PROPERTIES"].get("Operators", "Strange").replace(" ", "").split(",")
+
+operators = []
+for s in list1:
+    operators.append(s.lower())
 
 config["PROPERTIES"]["IP"] = IP
 config["PROPERTIES"]["Port"] = str(port)
